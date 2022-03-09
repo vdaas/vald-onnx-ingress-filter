@@ -37,6 +37,7 @@ FROM ${DISTROLESS_IMAGE}:${DISTROLESS_IMAGE_TAG}
 LABEL maintainer "${MAINTAINER}"
 
 ENV APP_NAME onnx
+ENV MODEL_PATH /path/to/model.onnx
 
 USER nonroot:nonroot
 
