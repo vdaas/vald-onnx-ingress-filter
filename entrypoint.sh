@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-MODEL_PATH="/path/to/model.onnx"
+MODEL_PATH=${MODEL_PATH:="/path/to/model.onnx"}
 
 python -u main.py --model_path ${MODEL_PATH}
