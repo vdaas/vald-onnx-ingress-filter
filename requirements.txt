@@ -1,0 +1,4 @@
+grpcio
+numpy
+onnxruntime
+vald-client-python
