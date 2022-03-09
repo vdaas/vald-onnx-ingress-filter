@@ -5,7 +5,7 @@ import onnxruntime
 
 from concurrent import futures
 from vald.v1.payload import payload_pb2
-from src.vald.v1.filter.ingress.ingress_filter_pb2_grpc import (
+from vald.v1.filter.ingress.ingress_filter_pb2_grpc import (
         FilterServicer,
         add_FilterServicer_to_server,
 )

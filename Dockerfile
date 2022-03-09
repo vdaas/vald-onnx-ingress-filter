@@ -14,16 +14,19 @@
 # limitations under the License.
 #
 
+ARG PYTHON_IMAGE=python
+ARG PYTHON_IMAGE_TAG=3.9-slim
 ARG DISTROLESS_IMAGE=gcr.io/distroless/python3-debian11
 ARG DISTROLESS_IMAGE_TAG=nonroot
 ARG MAINTAINER="vdaas.org vald team <vald@vdaas.org>"
 
-FROM python:3.9-slim AS build
+FROM ${PYTHON_IMAGE}:${PYTHON_IMAGE_TAG} AS build
 
 COPY requirements.txt /requirements.txt
 
 RUN apt-get update \
     && apt-get install --no-install-suggests --no-install-recommends --yes \
+      dumb-init \
       gcc \
       libpython3-dev \
     && pip install --upgrade pip \
@@ -37,9 +40,11 @@ ENV APP_NAME onnx
 
 USER nonroot:nonroot
 
+COPY --from=build /usr/bin/dumb-init /usr/bin/dumb-init
 COPY --from=build /usr/local/lib/python3.9/site-packages /usr/local/lib/python3.9/dist-packages
+COPY entrypoint.sh /app/entrypoint.sh
 COPY main.py /app/main.py
-COPY src /app/src
 
 WORKDIR /app
-ENTRYPOINT ["python", "-u", "main.py", "--model_path", "/path/to/model.onnx"]
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD ["/app/entrypoint.sh"]
