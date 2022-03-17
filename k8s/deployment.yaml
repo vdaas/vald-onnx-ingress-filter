@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vald-onnx-ingress-filter
+  labels:
+    app: vald-onnx-ingress-filter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vald-onnx-ingress-filter
+  template:
+    metadata:
+      labels:
+        app: vald-onnx-ingress-filter
+    spec:
+      initContainers:
+        - name: model-downloader
+          image: curlimages/curl
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /model
+              name: model-volume
+          command:
+            - /bin/sh
+            - -e
+            - -c
+            - |
+              curl -L "https://github.com/onnx/models/raw/main/vision/classification/resnet/model/resnet50-v2-7.onnx" -o /model/sample.onnx  #FIXME
+      containers:
+        - name: vald-onnx-ingress-filter
+          image: vdaas/vald-onnx-ingress-filter
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MODEL_PATH
+              value: "/model/sample.onnx"  #FIXME
+          ports:
+            - name: grpc
+              containerPort: 8081
+          volumeMounts:
+            - mountPath: /model
+              name: model-volume
+      volumes:
+        - name: model-volume
+          emptyDir: {}
