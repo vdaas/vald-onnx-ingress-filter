@@ -11,12 +11,6 @@ Using this component lets users vectorize various data such as text and images u
 
 ## Usage
 
-### Build vald-onnx-ingress-filter
-
-```
-docker build -t vdaas/vald-onnx-ingress-filter .
-```
-
 ### Deploy vald-onnx-ingress-filter
 
 ```
@@ -48,6 +42,9 @@ gateway:
     filter:
         enabled: true
 ...
+agent:
+    ngt:
+        dimension: 1000
 ```
 
 After editing, let’s try to deploy the Vald cluster by the helm install command.
