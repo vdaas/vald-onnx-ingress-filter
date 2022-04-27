@@ -14,7 +14,8 @@ Using this component lets users vectorize various data such as text and images u
 ### Deploy vald-onnx-ingress-filter
 
 ```
-kubectl apply -f k8s
+git clone https://github.com/vdaas/vald-onnx-ingress-filter.git
+kubectl apply -f vald-onnx-ingress-filter/k8s
 ```
 
 NOTE: The example manifest files use ResNet50-v2 from [ONNX Model Zoo](https://github.com/onnx/models#onnx-model-zoo) as the ONNX model.
