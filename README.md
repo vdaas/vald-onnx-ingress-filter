@@ -1,7 +1,7 @@
 # vald-onnx-ingress-filter
 
 [![Snyk](https://img.shields.io/snyk/vulnerabilities/github/vdaas/vald-onnx-ingress-filter)]()
-[![docker image](https://img.shields.io/docker/pulls/vdaas/vald-onnx-ingress-filter?label=vdaas%2Fvald-onnx-ingress-filter&logo=docker&style=flat-square)]()
+[![docker image](https://img.shields.io/docker/pulls/vdaas/vald-onnx-ingress-filter?label=vdaas%2Fvald-onnx-ingress-filter&logo=docker&style=flat-square)](https://hub.docker.com/r/vdaas/vald-onnx-ingress-filter)
 
 `vald-onnx-ingress-filter` is one of the official ingress filter components provided by Vald.
 
@@ -107,6 +107,6 @@ sstub.Search(
 ## Reference
 
 - Medium: [Vald released the new Vald official ingress filter: vald-onnx-ingress-filter
-](https://vdaas-vald.medium.com/383bdd22e5bb)
+](https://vdaas-vald.medium.com/vald-released-the-new-vald-official-ingress-filter-vald-onnx-ingress-filter-b807e147188b)
 
 - [Open Neural Network Exchange (ONNX)](https://onnx.ai/)
