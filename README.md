@@ -1,6 +1,6 @@
 # vald-onnx-ingress-filter
 
-[![Snyk](https://img.shields.io/snyk/vulnerabilities/github/vdaas/vald-onnx-ingress-filter)]()
+[![Snyk](https://img.shields.io/snyk/vulnerabilities/github/vdaas/vald-onnx-ingress-filter)](https://snyk.io/test/github/vdaas/vald-onnx-ingress-filter)
 [![docker image](https://img.shields.io/docker/pulls/vdaas/vald-onnx-ingress-filter?label=vdaas%2Fvald-onnx-ingress-filter&logo=docker&style=flat-square)](https://hub.docker.com/r/vdaas/vald-onnx-ingress-filter)
 
 `vald-onnx-ingress-filter` is one of the official ingress filter components provided by Vald.
