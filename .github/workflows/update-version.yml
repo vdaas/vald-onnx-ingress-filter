@@ -44,6 +44,7 @@ jobs:
             exit 0
           fi
 
+          git remote set-url origin "https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           echo "${VERSION}" > VALD_ONNX_INGRESS_FILTER_VERSION
           git checkout main
           git config --global user.name "VDaaS org"
@@ -51,7 +52,6 @@ jobs:
           git add VALD_ONNX_INGRESS_FILTER_VERSION
           git commit --signoff -m ":bookmark: Release ${VERSION}"
           git tag ${VERSION}
-          git remote set-url origin "https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push origin main
           git push origin ${VERSION}
         env:
