@@ -9,7 +9,7 @@ Its custom logic requires the input of the ONNX model as a request and outputs t
 Using this component lets users vectorize various data such as text and images using the ONNX model only inside the Vald cluster without external APIs.
 
 <div align="center">
-    <img src="https://github.com/vdaas/vald/blob/main/assets/image/readme.svg" width="50%" />
+    <img src="https://github.com/vdaas/vald/blob/main/assets/image/readme.svg?raw=true" width="50%" />
 </div>
 
 [![latest Image](https://img.shields.io/docker/v/vdaas/vald-onnx-ingress-filter/latest?label=vald-onnx-ingress-filter)](https://hub.docker.com/r/vdaas/vald-onnx-ingress-filter/tags?page=1&name=latest)
@@ -21,19 +21,15 @@ Using this component lets users vectorize various data such as text and images u
 
 <!-- FIXME: If image has some requirements, describe here with :warning: emoji -->
 
-<details><summary>linux/amd64</summary><br>
+### linux/amd64
 
 - Libraries: kubectl, Helm, grpcio, numpy, onnxruntime, vald-client-python
 - Others: Vald cluster
 
-</details>
-
-<details><summary>linux/arm64</summary><br>
+### linux/arm64
 
 - Libraries: kubectl, Helm, grpcio, numpy, onnxruntime, vald-client-python
 - Others: Vald cluster
-
-</details>
 
 ## Get Started
 
@@ -139,12 +135,11 @@ sstub.Search(
 
 ## Versions
 
-| tag     |    linux/amd64     |    linux/arm64     | description                                                                                                                 |
-| :------ | :----------------: | :----------------: | :-------------------------------------------------------------------------------------------------------------------------- |
-| latest  | :white_check_mark: | :white_check_mark: | the latest image is the same as the latest version of [vdaas/vald](https://github.com/vdaas/vald) repository version.       |
-| nightly | :white_check_mark: | :white_check_mark: | the nightly applies the main branch's source code of the [vdaas/vald](https://github.com/vdaas/vald) repository.            |
-| vX.Y.Z  | :white_check_mark: | :white_check_mark: | the vX.Y.Z image applies the source code of the [vdaas/vald](https://github.com/vdaas/vald) repository.                     |
-| pr-XXX  | :white_check_mark: |        :x:         | the pr-X image applies the source code of the pull request X of the [vdaas/vald](https://github.com/vdaas/vald) repository. |
+| tag     | linux/amd64 | linux/arm64 | description                                                                                                                     |
+| :------ | :---------: | :---------: | :------------------------------------------------------------------------------------------------------------------------------ |
+| latest  |     ✅      |     ✅      | the latest image is the same as the latest version of [vdaas/vald](https://github.com/vdaas/vald) repository version.           |
+| nightly |     ✅      |     ✅      | the nightly applies the main branch's source code of the [vdaas/vald](https://github.com/vdaas/vald) repository.                |
+| pr-XXX  |     ✅      |     ❌      | the pr-XXX image applies the source code of the pull request XXX of the [vdaas/vald](https://github.com/vdaas/vald) repository. |
 
 ## Dockerfile
 
